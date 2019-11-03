@@ -1,6 +1,6 @@
 from DoctorSiteManager import *
 from openpyxl import Workbook as WB
-
+excel_file_name =  "database.xlsx"
 wb = WB()
 excel = wb.active
 excel["A1"] = "Nome do Médico"
@@ -47,8 +47,9 @@ try:
                                 )
                             try:
                                 excel.append(row)
+                                wb.save(excel_file_name)
                             except KeyboardInterrupt:
-                                wb.save("database.xlsx")
+                                wb.save(excel_file_name)
                                 quit()
                         except Exception as e:
                             print(e)
@@ -57,15 +58,15 @@ try:
                                 f.write(url_doctor + "\n")
                                 f.close()
                 except KeyboardInterrupt:
-                    wb.save("database.xlsx")
+                    wb.save(excel_file_name)
                     quit()
                 print("saving data")
 
         except KeyboardInterrupt:
-            wb.save("database.xlsx")
+            wb.save(excel_file_name)
             quit()
 except KeyboardInterrupt:
-    wb.save("database.xlsx")
+    wb.save(excel_file_name)
     quit()
 
 
