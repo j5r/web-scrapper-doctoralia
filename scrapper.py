@@ -32,7 +32,6 @@ try:
             for c in cities_urls:
                 doctors_urls = getDoctorUrls(c)
                 ########################## GENERATING EXCEL SHEET
-                print("saving data")
                 try:
                     while len(doctors_urls):
                         url_doctor = doctors_urls.pop()
@@ -51,7 +50,8 @@ try:
                             except KeyboardInterrupt:
                                 wb.save("database.xlsx")
                                 quit()
-                        except:
+                        except Exception as e:
+                            print(e)
                             print("Error in: \033[1;31m",url_doctor,"\033[m")
                             with open("doctor_url_error.txt","a") as f:
                                 f.write(url_doctor + "\n")
@@ -59,6 +59,7 @@ try:
                 except KeyboardInterrupt:
                     wb.save("database.xlsx")
                     quit()
+                print("saving data")
 
         except KeyboardInterrupt:
             wb.save("database.xlsx")

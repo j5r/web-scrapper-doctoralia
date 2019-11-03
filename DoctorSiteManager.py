@@ -85,32 +85,56 @@ def getDoctor(url):
     soup = BS(page,"html.parser")
 
     # FULL NAME : doctor_name
-    doctor_name = soup.find_all("li", class_="dropdown")[-1].span.string #OK
+    try:
+        doctor_name = soup.find_all("li", class_="dropdown")[-1].span.string #OK
+    except:
+        print("Couldn't get name.")
+        raise Exception("Could not get a name.")
 
     # SKILLS LIST : doctor_skills_list
-    doctor_skills_h2 = soup.find_all("h2", class_="h4")[0]
-    doctor_skills_a = doctor_skills_h2.find_all('a')
-    doctor_skills_list = []
-    for a in doctor_skills_a:
-        doctor_skills_list.append(a.string)
+    try:
+        doctor_skills_h2 = soup.find_all("h2", class_="h4")[0]
+        doctor_skills_a = doctor_skills_h2.find_all('a')
+        doctor_skills_list = []
+        for a in doctor_skills_a:
+            doctor_skills_list.append(a.string)
+    except:
+        doctor_skills_list = ["---"]
+        print("Couldn't get doctor_skills_list.")
 
 
     #SPECIALTY
-    doctor_specialty = soup.find_all("li", \
-        class_="dropdown")[1].find_all("a",\
-        itemprop="item")[0].span.string
+    try:
+        doctor_specialty = soup.find_all("li", \
+            class_="dropdown")[1].find_all("a",\
+            itemprop="item")[0].span.string
+    except:
+        doctor_specialty = "---"
+        print("Couldn't get specialty.")
 
     # CITY
-    doctor_city = soup.find_all("li", \
-        class_="dropdown")[2].find_all("a", \
-        itemprop="item")[0].span.string
-
+    try:
+        doctor_city = soup.find_all("li", \
+            class_="dropdown")[2].find_all("a", \
+            itemprop="item")[0].span.string
+    except:
+        doctor_city = "---"
+        print("Couldn't get city.")
     # STATE
-    doctor_state = soup.find_all("span", \
-        class_="province region")[0]["content"]
+    try:
+        doctor_state = soup.find_all("span", \
+            class_="province region")[0]["content"]
+    except:
+        doctor_state = "---"
+        print("Couldn't get state.")
 
     # PHONE
-    doctor_phone = soup.find_all("a", class_="visible-xs")[1].string
+    try:
+        doctor_phone = soup.find_all("a", class_="visible-xs")[1].string
+    except:
+        doctor_phone = "---"
+        print("Couldn't get phone number.")
+
     D = Doctor()
     D.setName(doctor_name)
     D.setSpecialty(doctor_specialty)
