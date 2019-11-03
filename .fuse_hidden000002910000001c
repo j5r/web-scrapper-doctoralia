@@ -11,7 +11,7 @@ We implemented a web scrapper for getting data from the website "doctoralia.com.
 
 
 # Doctor.py
-In this file we implemented a simple class for storing data. Simple getters and setters are implemented, all of its attributes are strings. We implemented a simple representation method, for using the print() function and the special method for comparing objects contents, like "a==b?" (this was not used on the scrapper.py).
+In this file we implemented a simple class for storing data. Simple getters and setters are implemented, all of its attributes are strings. We implemented a simple representation method, for using print() function and the special method for comparing object contents, like "a==b?" (this was not used on the scrapper.py).
 
  - Name
  - Specialty
@@ -22,7 +22,7 @@ In this file we implemented a simple class for storing data. Simple getters and 
 
 
 # scrapper.py
-In this file we implemented the main function, composed by nested loops, passing through the four methods already described in DoctorSiteManager.py. It will create an Excel file containing the required data as specified in Doctor.py. When some error occurs, we save the "doctor url" in the file "doctor_url_error.txt".
+In this file we implemented the main function, composed by nested loops, passing through the four functions already described in DoctorSiteManager.py. It will create an Excel file containing the required data as specified in Doctor.py. When some error occurs, we save the "doctor url" in the file "doctor_url_error.txt".
 
 
 

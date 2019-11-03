@@ -22,7 +22,7 @@ In this file we implemented a simple class for storing data. Simple getters and 
 
 
 # scrapper.py
-In this file we implemented the main function, composed by nested loops, passing through the four methods already described in DoctorSiteManager.py. It will create an Excel file containing the required data as specified in Doctor.py. When some error occurs, we save the "doctor url" in the file "doctor_url_error.txt".
+In this file we implemented the main function, composed by nested loops, passing through the four functions already described in DoctorSiteManager.py. It will create an Excel file containing the required data as specified in Doctor.py. When some error occurs, we save the "doctor url" in the file "doctor_url_error.txt".
 
 
 
