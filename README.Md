@@ -1,13 +1,13 @@
 # DoctorSiteManager.py
 We implemented a web scrapper for getting data from the website "doctoralia.com.br" and saving it into an Excel sheet.
 
- - getSpecialtyUrls(): this function gets all the urls from the page [Set of specialties](https://www.doctoralia.com.br/medicos) when we click on "mais>>" link, for all specialties. It returns a list containing these urls.
+ - getSpecialtyUrls( ) ==> [url_list]: this function gets all the urls from the page [Set of specialties](https://www.doctoralia.com.br/medicos) when we click on "mais>>" link, for all specialties. It returns a list containing these urls.
 
- - getCityUrls(specialty_url): this function gets all the urls for all cities for some specialty, like in [Set of cities](https://www.doctoralia.com.br/especializacoes-medicas/em-detalhe/alergista). This method returns a list of all urls of cities. It needs some url from the getSpecialtyUrls() method as a mandatory positional argument.
+ - getCityUrls(specialty_url) ==> [url_list]: this function gets all the urls for all cities for some specialty, like in [Set of cities](https://www.doctoralia.com.br/especializacoes-medicas/em-detalhe/alergista). This function returns a list of all urls of cities. It needs some url from the getSpecialtyUrls() function as a mandatory positional argument.
 
- - getDoctorUrls(city_url): this function gets all the urls of doctor pages like in [Set of Doctors](https://www.doctoralia.com.br/alergista/alem-paraiba). This method returns a list of urls. It needs some url from the getCityUrls() method as a mandatory positional argument.
+ - getDoctorUrls(city_url) ==> [url_list]: this function gets all the urls of doctor pages like in [Set of Doctors](https://www.doctoralia.com.br/alergista/alem-paraiba). This function returns a list of urls. It needs some url from the getCityUrls() method as a mandatory positional argument.
 
- - getDoctor(doctor_url): this function gets all the specific data from a doctor page like [Doctor Page](https://www.doctoralia.com.br/thais-de-oliveira-ferreira/alergista/alem-paraiba#address-id=[214158]). It returns an object of type Doctor, implemented in Doctor.py.
+ - getDoctor(doctor_url) ==> Doctor( ): this function gets all the specific data from a doctor page like [Doctor Page](https://www.doctoralia.com.br/thais-de-oliveira-ferreira/alergista/alem-paraiba#address-id=[214158]). It returns an object of type Doctor, implemented in Doctor.py.
 
 
 # Doctor.py
