@@ -13,14 +13,21 @@ excel["F1"] = "Telefone"
 
 """
 STRATEGY (you can see it in README.md)
-We will pass through a list of urls that point out to another list of
-urls, that, again, point to another list of urls.
+We will pass through a list of urls that each one points out to another
+list of urls, that, again, each one points to another list of urls. These
+last urls are used to get the data.
 
 We call the first one as "specialities_urls", that is in the main page.
 These urls points to other pages, which is one for each city.
 For each city, there is a group of doctors, which in turn have their
 own pages. We will navegate through this tree until reaching the doctors
 pages, where we will get the data.
+
+SPECIALTY >> CITY >> DOCTOR (data)
+
+SPECIALTY >> it points out to a list of cities
+CITY >> it points out to a list of doctors
+DOCTOR >> here we get the data
 """
 
 
